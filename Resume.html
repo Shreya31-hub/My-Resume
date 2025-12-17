@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shreya Shah - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* RESET & BASICS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+        }
+
+        /* PAGE STRUCTURE */
+        .page-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            padding-top: 35px;
+        }
+
+        /* LEFT COLUMN */
+        .left-column {
+            width: 66%;
+            padding-left: 45px;
+            padding-right: 35px;
+        }
+
+        /* RIGHT COLUMN */
+        .right-column {
+            width: 34%;
+            padding-left: 25px;
+            padding-right: 40px;
+        }
+
+        /* HEADER */
+        .header-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-box {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 22px;
+            background-color: #f4f4f4;
+            border: 2px solid #e0e0e0;
+            flex-shrink: 0;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14pt;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .job-title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 10pt;
+            color: #666;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* HEADINGS (LEFT SIDE) - NOW WITH UNDERLINE */
+        h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+            /* ADDED UNDERLINE TO MATCH RIGHT SIDE */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .icon {
+            margin-right: 12px;
+            font-size: 14pt;
+            color: #2c3e50;
+        }
+
+        /* CONTENT */
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        .entry-title {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 10pt;
+            color: #222;
+            margin-bottom: 2px;
+        }
+
+        .entry-subtitle {
+            font-size: 10pt;
+            color: #555;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .entry-date {
+            font-size: 10pt;
+            color: #888;
+            margin-bottom: 5px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .profile-summary {
+            font-size: 10pt;
+            color: #444;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 17px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            font-size: 10pt;
+            color: #444;
+        }
+
+        /* LINKS STYLE */
+        .link-group {
+            font-size: 10pt;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* SIDEBAR STYLES */
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-heading {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            /* MATCHING UNDERLINE */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .sidebar-text {
+            font-size: 10pt;
+            color: #444;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .sidebar-link {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+
+        .skill-item {
+            display: block;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 10pt;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page-container {
+                width: 100%;
+                margin: 0;
+                padding-top: 15mm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="left-column">
+
+            <div class="header-container">
+                <div class="photo-box">
+                    <img src="PP.jpeg" alt="Shreya Shah">
+                </div>
+                <div class="header-text">
+                    <h1>Shreya Shah</h1>
+                    <div class="job-title">Python Full Stack & AI Developer</div>
+                </div>
+            </div>
+
+            <h2><span class="icon">👤</span> Profile</h2>
+            <div style="margin-bottom: 20px;">
+                <p class="profile-summary">
+                    Computer Science student (Batch 2026) with a primary focus on Python and
+                    Backend Development. Proficient in building logic and database connections using
+                    Flask and MySQL, with a functional understanding of HTML/CSS.
+                    Recently completed an internship in automation. Seeking an internship that provides
+                        mentorship and training to help me refine my skills and grow into a professional Full
+                    Stack Developer.
+                </p>
+            </div>
+
+            <h2><span class="icon">🎓</span> Education</h2>
+            <div class="entry">
+                <div class="entry-title">B.Tech, New LJ Institute of Engineering and Technology</div>
+                <span class="entry-date">Jan 2026 (Expected) | Ahmedabad, Gujarat</span>
+                <div class="entry-subtitle">Computer Science Engineering</div>
+            </div>
+
+            <h2><span class="icon">💻</span> Projects</h2>
+
+            <div class="entry">
+                <div class="entry-title">
+                    GameZone Arcade Platform
+                    <span class="link-group">
+                        <a href="https://shreya31.pythonanywhere.com/login" target="_blank" class="project-link">🔴
+                            [Live Demo]</a>
+                        |
+                        <a href="https://github.com/Shreya31-hub/GameZone-Arcade" target="_blank"
+                            class="project-link">[View Code]</a>
+                    </span>
+                </div>
+                <div class="entry-subtitle">Full Stack (Flask, MySQL, CSS)</div>
+                <ul>
+                    <li><strong>Deployed Live:</strong> Hosted on PythonAnywhere demonstrating production deployment
+                        skills.</li>
+                    <li>Developed a multi-game platform with secure user login, authentication, and global leaderboards.
+                    </li>
+                    <li>Designed a responsive <strong>Neon Glassmorphism UI</strong> for an immersive user experience.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Task Manager Web App</div>
+                <div class="entry-subtitle">Flask, MySQL, Jinja2</div>
+                <ul>
+                    <li>Built a CRUD-based task manager using Flask backend and MySQL database for persistent storage.
+                    </li>
+                    <li>Implemented dynamic Jinja2 templates for adding, updating, and completing tasks.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-title">Attendance Tracker</div>
+                <div class="entry-subtitle">Python CLI & File Handling</div>
+                <ul>
+                    <li>Built a Python automation tool for daily attendance marking and percentage calculation.</li>
+                </ul>
+            </div>
+
+            <h2><span class="icon">💼</span> Internship Experience</h2>
+            <div class="entry">
+                <div class="entry-title">AI & Automation Intern</div>
+                <div class="entry-subtitle">CSRBOX Foundation, Ahmedabad</div>
+                <span class="entry-date">Summer GTU Program (2 Weeks)</span>
+                <ul>
+                    <li>Independently designed an automation workflow using Relay and Google Forms, creating a system
+                        where user registration triggered instant automatic email responses.</li>
+                    <li>Learned practical AI integration and how small AI-based triggers can simplify complex workflows.
+                    </li>
+                    <li>Executed the project independently, demonstrating strong self-management and problem-solving
+                        skills in a remote environment.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Certifications</div>
+                <div style="margin-bottom: 10px;">
+                    <span style="font-weight:700; display:block; font-size:10pt;">Python Programming</span>
+                    <span style="font-size:10pt;">5 Modules (College)</span>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <span style="font-weight:700; display:block; font-size:10pt;">C Language</span>
+                    <span style="font-size:10pt;">IANT Certified</span>
+                </div>
+                <div>
+                    <span style="font-weight:700; display:block; font-size:10pt;">MS Office Basics</span>
+                    <span style="font-size:10pt;">Certified</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Technical Skills</div>
+                <span class="skill-item">Python</span>
+                <span class="skill-item">C Language</span>
+                <span class="skill-item">HTML5 & CSS3</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Flask (Backend)</span>
+                <span class="skill-item">MySQL</span>
+                <span class="skill-item">Git & GitHub</span>
+                <span class="skill-item">Microsoft Office</span>
+                <span class="skill-item">REST APIs</span>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Details</div>
+                <span class="sidebar-text">Ahmedabad, Gujarat</span>
+                <span class="sidebar-text">India</span>
+                <span class="sidebar-text">9313236996</span>
+                <a href="mailto:shreyashah6968@gmail.com" class="sidebar-link">shreyashah6968@gmail.com</a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading">Links</div>
+                <a href="https://github.com/Shreya31-hub" class="sidebar-link">GitHub Profile</a>
+                <a href="https://linkedin.com/in/shreya-shah" class="sidebar-link">LinkedIn Profile</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

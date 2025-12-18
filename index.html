@@ -33,24 +33,31 @@
             width: 66%; 
             padding-left: 45px;
             padding-right: 35px;
+            padding-bottom: 50px; 
+            display: flex;
+            flex-direction: column;
+            border-right: 2px solid #eee; 
         }
 
         /* RIGHT COLUMN */
         .right-column {
             width: 34%;
             padding-left: 25px;
-            padding-right: 40px;
-            /* FIXED: Added top padding to align Certifications with the Photo */
-            padding-top: 15px;
+            padding-right: 40px; 
+            padding-top: 15px; 
         }
 
-        /* HEADER */
+        /* HEADER (Simple - No Highlight) */
         .header-container {
             display: flex;
             align-items: center;
             margin-bottom: 30px;
+            padding: 0; 
+            border: none;
+            color: #333; 
         }
         
+        /* PHOTO STYLES */
         .photo-box {
             width: 85px;
             height: 85px;
@@ -67,13 +74,13 @@
             height: 100%;
             object-fit: cover;
         }
-
+        
         .header-text h1 {
             font-family: 'Open Sans', sans-serif;
-            font-size: 14pt;
+            font-size: 22pt;
             font-weight: 800;
-            color: #2c3e50;
-            margin-bottom: 4px;
+            color: #2c3e50; /* Dark Blue Name */
+            margin-bottom: 5px;
             line-height: 1;
             text-transform: uppercase;
             letter-spacing: -0.5px;
@@ -82,26 +89,28 @@
         .job-title {
             font-family: 'Open Sans', sans-serif;
             font-size: 10pt;
-            color: #666;
+            color: #666; /* Grey Title */
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        /* HEADINGS - UNIFIED STYLE */
+        /* SECTION HEADINGS */
         h2, .sidebar-heading {
             font-family: 'Open Sans', sans-serif;
-            font-size: 14pt;
+            font-size: 12pt;
             font-weight: 700;
             text-transform: uppercase;
             color: #2c3e50;
             margin-top: 25px;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
+            background-color: #f0f4f8; 
+            padding: 8px 15px;        
+            border-radius: 4px;       
+            border-left: 5px solid #2c3e50; 
             width: 100%;
         }
         
@@ -111,13 +120,13 @@
         }
         
         .icon {
-            margin-right: 12px;
-            font-size: 14pt;
+            margin-right: 10px;
+            font-size: 12pt;
             color: #2c3e50;
         }
 
         /* CONTENT */
-        .entry { margin-bottom: 20px; }
+        .entry { margin-bottom: 35px; }
         
         .entry-title {
             font-family: 'Open Sans', sans-serif;
@@ -145,12 +154,12 @@
         .profile-summary {
             font-size: 10pt;
             color: #444;
-            line-height: 1.6;
+            line-height: 1.8;
             text-align: justify;
         }
         
         ul { list-style-type: disc; padding-left: 17px; margin-top: 5px; }
-        li { margin-bottom: 4px; font-size: 10pt; color: #444; }
+        li { margin-bottom: 6px; font-size: 10pt; color: #444; }
         
         /* LINKS STYLE */
         .link-group {
@@ -159,13 +168,17 @@
             font-weight: 600;
         }
         
-        .project-link {
+        /* Z-Index ensures links are clickable */
+        .project-link, .sidebar-link, a {
             color: #007bff;
             text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
         }
 
         /* SIDEBAR STYLES */
-        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-section { margin-bottom: 35px; }
         
         .sidebar-text {
             font-size: 10pt;
@@ -176,8 +189,6 @@
         }
         
         .sidebar-link {
-            color: #007bff;
-            text-decoration: none;
             display: block;
             margin-bottom: 8px;
             font-size: 10pt;
@@ -187,14 +198,38 @@
         .skill-item {
             display: block;
             margin-bottom: 8px;
-            color: #444;
+            color: #333;
             font-size: 10pt;
-            font-weight: 500;
+            font-weight: 600;
         }
 
+        /* HIGH QUALITY PRINT SETTINGS */
         @media print {
-            body { margin: 0; -webkit-print-color-adjust: exact; }
-            .page-container { width: 100%; margin: 0; padding-top: 15mm; }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body { 
+                margin: 0; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .page-container { 
+                width: 100%; 
+                margin: 0; 
+                padding-top: 15mm; 
+                padding-bottom: 15mm;
+            }
+            h2, .sidebar-heading { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
+            
+            /* FORCE LINKS TO BE BLUE */
+            a, .project-link, .sidebar-link {
+                color: #007bff !important;
+                text-decoration: none !important;
+            }
         }
     </style>
 </head>
@@ -215,17 +250,10 @@
         </div>
 
         <h2><span class="icon">👤</span> Profile</h2>
-        <div style="margin-bottom: 20px;">
+        <div style="margin-bottom: 25px;">
             <p class="profile-summary">
                 Computer Science student (Batch of 2026) focused on Python-based backend development. Proficient in designing logic-driven applications using Flask and MySQL, with working knowledge of HTML and CSS. Completed an internship in automation and eager to further strengthen technical skills through real-world projects and industry exposure.
             </p>
-        </div>
-
-        <h2><span class="icon">🎓</span> Education</h2>
-        <div class="entry">
-            <div class="entry-title">B.Tech, New LJ Institute of Engineering and Technology</div>
-            <span class="entry-date">Jan 2026 (Expected) | Ahmedabad, Gujarat</span>
-            <div class="entry-subtitle">Computer Science Engineering</div>
         </div>
 
         <h2><span class="icon">💻</span> Projects</h2>
@@ -234,9 +262,9 @@
             <div class="entry-title">
                 GameZone Arcade Platform
                 <span class="link-group">
-                    <a href="https://shreya31.pythonanywhere.com/login" target="_blank" class="project-link">🔴 [Live Demo]</a>
+                    <a href="https://shreya31.pythonanywhere.com/login" class="project-link">🔴 [Live Demo]</a>
                     | 
-                    <a href="https://github.com/Shreya31-hub/GameZone-Arcade" target="_blank" class="project-link">[View Code]</a>
+                    <a href="https://github.com/Shreya31-hub/GameZone-Arcade" class="project-link">[View Code]</a>
                 </span>
             </div>
             <div class="entry-subtitle">Full Stack (Flask, MySQL, CSS)</div>
@@ -265,6 +293,16 @@
         </div>
 
         <h2><span class="icon">💼</span> Internship Experience</h2>
+        
+        <div class="entry">
+            <div class="entry-title">Web Developer Intern</div>
+            <div class="entry-subtitle">Cloudoffis, Ahmedabad</div>
+            <ul>
+                <li>Developed a secure <strong>User Management System</strong> with an Admin Login portal, ensuring access is restricted to verified credentials only.</li>
+                <li>Designed a centralized <strong>Admin Dashboard</strong> that provides full control to configure and add Servers, Environments, and Users.</li>
+            </ul>
+        </div>
+
         <div class="entry">
             <div class="entry-title">AI & Automation Intern</div>
             <div class="entry-subtitle">CSRBOX Foundation, Ahmedabad</div>
@@ -279,6 +317,15 @@
     </div>
 
     <div class="right-column">
+
+        <div class="sidebar-section">
+            <div class="sidebar-heading">Education</div>
+            <div style="margin-bottom: 10px;">
+                <span style="font-weight:700; display:block; font-size:10pt;">B.Tech (CSE)</span>
+                <span style="font-size:10pt; display:block;">New LJ Institute of Engineering</span>
+                <span style="font-size:10pt; color:#666;">Jan 2026 | Ahmedabad</span>
+            </div>
+        </div>
 
         <div class="sidebar-section">
             <div class="sidebar-heading">Certifications</div>
@@ -323,7 +370,7 @@
             <div class="sidebar-heading">Links</div>
             <a href="https://github.com/Shreya31-hub" class="sidebar-link">GitHub Profile</a>
             <a href="https://linkedin.com/in/shreya-shah" class="sidebar-link">LinkedIn Profile</a>
-            <a href="https://t.me/Shreya_3_1" class="sidebar-link">Telegram</a>
+            <a href="https://t.me/USERNAME" class="sidebar-link">Telegram Profile</a>
         </div>
 
     </div>
@@ -332,6 +379,3 @@
 
 </body>
 </html>
-
-
-

@@ -47,23 +47,24 @@
             padding-top: 15px; 
         }
 
-        /* HEADER */
+        /* HEADER (Name Section) - DISTINCT DARK HIGHLIGHT */
         .header-container {
             display: flex;
             align-items: center;
             margin-bottom: 40px;
+            /* Dark Blue Background */
             background-color: #2c3e50; 
             padding: 25px;
             border-radius: 8px;
-            color: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            color: #fff; /* White Text */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
         }
         
         .header-text h1 {
             font-family: 'Open Sans', sans-serif;
             font-size: 20pt;
             font-weight: 800;
-            color: #fff;
+            color: #fff; /* White Name */
             margin-bottom: 5px;
             line-height: 1;
             text-transform: uppercase;
@@ -73,13 +74,13 @@
         .job-title {
             font-family: 'Open Sans', sans-serif;
             font-size: 10pt;
-            color: #bdc3c7;
+            color: #bdc3c7; /* Silver Title */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        /* SECTION HEADINGS */
+        /* SECTION HEADINGS - LIGHT HIGHLIGHT STYLE */
         h2, .sidebar-heading {
             font-family: 'Open Sans', sans-serif;
             font-size: 12pt;
@@ -145,16 +146,20 @@
         ul { list-style-type: disc; padding-left: 17px; margin-top: 5px; }
         li { margin-bottom: 6px; font-size: 10pt; color: #444; }
         
-        /* LINKS STYLE */
+        /* LINKS STYLE (PDF SAFE) */
         .link-group {
             font-size: 10pt;
             margin-left: 8px;
             font-weight: 600;
         }
         
-        .project-link {
+        /* Z-Index ensures links are clickable on top of backgrounds */
+        .project-link, .sidebar-link, a {
             color: #007bff;
             text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
         }
 
         /* SIDEBAR STYLES */
@@ -169,8 +174,6 @@
         }
         
         .sidebar-link {
-            color: #007bff;
-            text-decoration: none;
             display: block;
             margin-bottom: 8px;
             font-size: 10pt;
@@ -185,13 +188,29 @@
             font-weight: 600;
         }
 
-        /* PRINT SETTINGS (This makes links work in PDF) */
+        /* HIGH QUALITY PRINT SETTINGS */
         @media print {
-            body { margin: 0; -webkit-print-color-adjust: exact; }
-            .page-container { width: 100%; margin: 0; padding-top: 0; }
-            h2, .sidebar-heading, .header-container { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            @page {
+                size: A4;
+                margin: 0; /* Removing default margins for crisp edges */
+            }
+            body { 
+                margin: 0; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .page-container { 
+                width: 100%; 
+                margin: 0; 
+                padding-top: 15mm; /* Restore padding in print */
+                padding-bottom: 15mm;
+            }
+            h2, .sidebar-heading, .header-container { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact; 
+            }
             
-            /* FORCE LINKS TO BE BLUE AND CLICKABLE */
+            /* FORCE LINKS TO BE BLUE */
             a, .project-link, .sidebar-link {
                 color: #007bff !important;
                 text-decoration: none !important;
@@ -225,9 +244,9 @@
             <div class="entry-title">
                 GameZone Arcade Platform
                 <span class="link-group">
-                    <a href="https://shreya31.pythonanywhere.com/login" target="_blank" class="project-link">🔴 [Live Demo]</a>
+                    <a href="https://shreya31.pythonanywhere.com/login" class="project-link">🔴 [Live Demo]</a>
                     | 
-                    <a href="https://github.com/Shreya31-hub/GameZone-Arcade" target="_blank" class="project-link">[View Code]</a>
+                    <a href="https://github.com/Shreya31-hub/GameZone-Arcade" class="project-link">[View Code]</a>
                 </span>
             </div>
             <div class="entry-subtitle">Full Stack (Flask, MySQL, CSS)</div>
